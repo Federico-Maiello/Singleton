@@ -1,8 +1,15 @@
 public class User {
+    private static User user;
+    public static User getInstance() {
+        if(user == null) {
+            user = new User("Default", 34);
+        }
+        return user;
+    }
     private String name;
     private int age;
 
-    public User(String name, int age) {
+    private User(String name, int age) {
         this.name = name;
         this.age = age;
     }
